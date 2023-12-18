@@ -7,7 +7,6 @@
 var app = require("../app");
 var debug = require("debug")("colaborative-api:server");
 var http = require("http");
-const ngrok = require("@ngrok/ngrok");
 /**
  * Get port from environment and store in Express.
  */
@@ -28,14 +27,6 @@ var server = http.createServer(app);
 server.listen(port, () => {
   console.log("http://localhost:" + port);
 });
-(async function () {
-  const url = await ngrok.connect({
-    authtoken: "2ZRmPVGumGG6mPgoQX0FCLq2WHj_4fHrKeoSjp17yJgoEwwCq",
-    addr:port,
-    domain:"civil-mutt-thoroughly.ngrok-free.app"
-  });
-  console.log(url.url());
-})();
 server.on("error", onError);
 server.on("listening", onListening);
 
