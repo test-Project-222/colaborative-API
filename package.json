@@ -4,7 +4,10 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "nodemon  ./bin/www"
+    "dev": "nodemon  ./bin/www",
+    "migrate": "prisma migrate dev",
+    "db-pull": "prisma db pull",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@ngrok/ngrok": "^0.9.1",
