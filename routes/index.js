@@ -1,7 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const {
-  getProductRecomentation,getAllProduct
+  getProductRecomentation,
+  getAllProduct,
 } = require("../controllers/colaborative.controllers");
 /* GET home page. */
 router.get("/", getProductRecomentation);

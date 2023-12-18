@@ -20,22 +20,22 @@ module.exports = {
         productDetail.push(findProduct);
       }
       console.log(productDetail);
-      res.status(200).json({
+      return res.status(200).json({
         status: true,
         message: "data succes to Show",
         productRecomendation: recomendationProduct,
-        productDetail
+        productDetail,
       });
     } catch (err) {
       next(err);
     }
   },
-  getAllProduct : async (req,res,next)=>{
-    const allProduct = await prisma.product.findMany()
+  getAllProduct: async (req, res, next) => {
+    const allProduct = await prisma.product.findMany();
     res.status(200).json({
       status: true,
       message: "data succes to Show",
-      allProduct
+      allProduct,
     });
-  }
+  },
 };

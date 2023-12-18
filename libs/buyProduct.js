@@ -29,6 +29,7 @@ async function userRatingProduct() {
     }
     usersAddRating.push(temp_buyer);
   }
+  
   return usersAddRating;
 }
 // // Test Hafid
